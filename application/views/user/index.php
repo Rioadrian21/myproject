@@ -54,7 +54,7 @@
             <div class="text col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
                 <h6>SIJAJA</h6>
                 <h2>Sistem Informasi Jasa Jahit</h2>
-                <p>Rio ipsum dolor sit amet consectetur adipisicing elit. Doloribus, nostrum omnis ipsum tenetur illo saepe consequuntur corporis alias eaque harum ab sint earum vel modi quisquam hic, animi autem porro.</p>
+                <p>Rio v2 ipsum dolor sit amet consectetur adipisicing elit. Doloribus, nostrum omnis ipsum tenetur illo saepe consequuntur corporis alias eaque harum ab sint earum vel modi quisquam hic, animi autem porro.</p>
                 <a href="#product">Order Now !</a>
             </div>
             <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
