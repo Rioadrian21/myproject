@@ -56,7 +56,8 @@
                                 <th>Jenis</th>
                                 <th>Bahan</th>
                                 <th>Ukuran</th>
-                                <th>Jumlah</th>
+                                <th>Banyak</th>
+                                <th>Jumlah harga</th>
                                 <th>Warna</th>
                                 <th>Action</th>
                             </tr>
@@ -69,7 +70,8 @@
                                     <td><?= $od['jenis'] ?></td>
                                     <td><?= $od['bahan'] ?></td>
                                     <td><?= $od['ukuran'] ?></td>
-                                    <td><?= $od['jumlah'] ?></td>
+                                    <td><?= $od['banyak'] ?></td>
+                                    <td>Rp. <?= $od['jumlah_harga'] ?></td>
                                     <td><?= $od['warna'] ?></td>
                                     <td>
                                         <a class="btn btn-outline-success py-0" href="<?= base_url() ?>Admin/hapus/<?= $od['id']; ?>" onclick="return confirm('Apakah anda yakin sudah selesai?');"> Selesai </a>

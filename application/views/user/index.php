@@ -54,7 +54,10 @@
             <div class="text col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
                 <h6>SIJAJA</h6>
                 <h2>Sistem Informasi Jasa Jahit</h2>
-                <p>Rio v2 ipsum dolor sit amet consectetur adipisicing elit. Doloribus, nostrum omnis ipsum tenetur illo saepe consequuntur corporis alias eaque harum ab sint earum vel modi quisquam hic, animi autem porro.</p>
+                <p>Anda ingin membuat baju, Seragam Sekolah, kemeja dll tapi gatau caranya menjahit?
+                    Tenang saja ya, anda bisa mempercayakan semuanya kepada Si Jaja kami
+                    Hanya dalam waktu kurang dari 7 hari, sudah bisa si ambil loh!
+                    Anda juga bisa memilih sendiri bahan yang akan digunakan atau bisa juga dengan mempercayakan jasa kami!</p>
                 <a href="#product">Order Now !</a>
             </div>
             <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
@@ -71,7 +74,8 @@
             <div class="text col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
                 <h6>SIJAJA</h6>
                 <h2>Sistem Informasi Jasa Jahit</h2>
-                <p>Lutfi ipsum dolor sit amet consectetur adipisicing elit. Doloribus, nostrum omnis ipsum tenetur illo saepe consequuntur corporis alias eaque harum ab sint earum vel modi quisquam hic, animi autem porro.</p>
+                <p>Sistem Informasi jasa jahit atau di kenal dengan sijaja, berdiri pada tanggal 12 desember 2022, Yang berdomisili,
+                    pembuatan awal di kab.kawarang, di buat oleh tangan mahasiswa ubsi cikampek, untuk penempatan kami berada di daerah galuh mas.</p>
                 <a href="#product">Order Now !</a>
             </div>
         </div>
@@ -85,46 +89,14 @@
                 </h2>
             </div>
             <div class="row mx-auto justify-content-center align-items-center text-center container-fluid">
-                <div data-toggle="modal" data-target="#popupmodal1" class="one col-lg-2 col-md-3 col-12 w-25 m-1" style="cursor: pointer;">
-                    <img class="img-fluid" src="assets/img/ss1.png" alt="">
-                    <h5 class="font-weight-bold pt-3">Kemeja</h5>
-                </div>
-                <div data-toggle="modal" data-target="#popupmodal2" class="one col-lg-2 col-md-3 col-12 w-25 m-1" style="cursor: pointer;">
-                    <img class="img-fluid" src="assets/img/ss2.png" alt="">
-                    <h5 class="font-weight-bold pt-3">Batik</h5>
-                </div>
-                <div data-toggle="modal" data-target="#popupmodal3" class="one col-lg-2 col-md-3 col-12 w-25 m-1" style="cursor: pointer;">
-                    <img class="img-fluid" src="assets/img/ss3.png" alt="">
-                    <h5 class="font-weight-bold pt-3">Jas</h5>
-                </div>
-                <div data-toggle="modal" data-target="#popupmodal4" class="one col-lg-2 col-md-3 col-12 w-25 m-1" style="cursor: pointer;">
-                    <img class="img-fluid" src="assets/img/ss4.png" alt="">
-                    <h5 class="font-weight-bold pt-3">Jaket</h5>
-                </div>
-                <div data-toggle="modal" data-target="#popupmodal5" class="one col-lg-2 col-md-3 col-12 w-25 m-1" style="cursor: pointer;">
-                    <img class="img-fluid" src="assets/img/ss5.png" alt="">
-                    <h5 class="font-weight-bold pt-3">Sweeter</h5>
-                </div>
-                <div data-toggle="modal" data-target="#popupmodal6" class="one col-lg-2 col-md-3 col-12 w-25 m-1" style="cursor: pointer;">
-                    <img class="img-fluid" src="assets/img/ss6.png" alt="">
-                    <h5 class="font-weight-bold pt-3">Hoodie</h5>
-                </div>
-                <div data-toggle="modal" data-target="#popupmodal7" class="one col-lg-2 col-md-3 col-12 w-25 m-1" style="cursor: pointer;">
-                    <img class="img-fluid" src="assets/img/ss7.png" alt="">
-                    <h5 class="font-weight-bold pt-3">Seragam</h5>
-                </div>
-                <div data-toggle="modal" data-target="#popupmodal8" class="one col-lg-2 col-md-3 col-12 w-25 m-1" style="cursor: pointer;">
-                    <img class="img-fluid" src="assets/img/ss8.png" alt="">
-                    <h5 class="font-weight-bold pt-3">Couple</h5>
-                </div>
-                <div data-toggle="modal" data-target="#popupmodal9" class="one col-lg-2 col-md-3 col-12 w-25 m-1" style="cursor: pointer;">
-                    <img class="img-fluid" src="assets/img/ss9.png" alt="">
-                    <h5 class="font-weight-bold pt-3">Kebaya</h5>
-                </div>
-                <div data-toggle="modal" data-target="#popupmodal10" class="one col-lg-2 col-md-3 col-12 w-25 m-1" style="cursor: pointer;">
-                    <img class="img-fluid" src="assets/img/ss10.png" alt="">
-                    <h5 class="font-weight-bold pt-3">T-shirt</h5>
-                </div>
+                <?php foreach ($product as $pro) : ?>
+                    <div data-toggle="modal" data-target="#popupmodal<?= $pro->id_product ?>" class="one col-lg-2 col-md-3 col-12 w-25 m-1" style="cursor: pointer;">
+                        <img class="img-fluid" src="assets/img/<?= $pro->img ?>" alt="">
+                        <h5 class="font-weight-bold pt-3"><?= $pro->nama_product ?></h5>
+                        <h5 class="font-weight-bold pt-3">Rp. <?= $pro->harga ?></h5>
+                    </div>
+                <?php endforeach; ?>
+
             </div>
         </div>
     </section>
@@ -218,695 +190,81 @@
     </div>
 
     <!-- load modal insert data -->
-    <div class="modal fade" id="popupmodal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content kotak">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Order Now !</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col my-auto">
-                            <img class="img-fluid" src="assets/img/ss1.png" alt="">
-                            <h3 class="text-center">Kemeja</h3>
-                        </div>
-                        <div class="col">
-                            <form action="<?= base_url('user/tambah'); ?>" method="post">
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['name']; ?>" name="nami">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['email']; ?>" name="email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="Kemeja" name="jenis">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="bahan">
-                                        <option value="" disable>Pilih Bahan....</option>
-                                        <option value="Katun">Katun</option>
-                                        <option value="Slik">Slik</option>
-                                        <option value="Linen">Linen</option>
-                                        <option value="Toyobo">Toyobo</option>
-                                        <option value="Inma">Inma</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="ukuran">
-                                        <option value="" disable>Pilih Ukuran....</option>
-                                        <option value="XXL">XXL</option>
-                                        <option value="XL">XL</option>
-                                        <option value="L">L</option>
-                                        <option value="M">M</option>
-                                        <option value="S">S</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="number" class="form-control form-control-user btn-outline-success" value="" name="jumlah" placeholder="Jumlah....">
-                                </div>
-                                <div class="form-group mb-5">
-                                    <select class="form-control form-control-user btn-outline-success" name="warna">
-                                        <option value="" disable>Pilih Warna....</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Kuning">Kuning</option>
-                                        <option value="Hijau">Hijau</option>
-                                        <option value="Biru">Biru</option>
-                                        <option value="Hitam">Hitam</option>
-                                        <option value="Putih">Putih</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success" style="width: 100%;" onclick="return confirm('Are you sure to order our product ?');">Order Now</button>
-                            </form>
+    <?php foreach ($product as $pro) : ?>
+        <div class="modal fade" id="popupmodal<?= $pro->id_product ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content kotak">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Order Now !</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">x</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col my-auto">
+                                <img class="img-fluid" src="assets/img/<?= $pro->img ?>" alt="">
+                                <h3 class="text-center"><?= $pro->nama_product ?></h3>
+                            </div>
+                            <div class="col">
+                                <form action="<?= base_url('user/tambah'); ?>" method="post">
+                                    <div class="form-group mb-2">
+                                        <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['name']; ?>" name="name">
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['email']; ?>" name="email">
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $pro->nama_product ?>" name="jenis">
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <input type="number" class="form-control form-control-user btn-outline-success" value="<?= $pro->harga ?>" name="harga">
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <select class="form-control form-control-user btn-outline-success" name="bahan">
+                                            <option value="" disable>Pilih Bahan....</option>
+                                            <option value="Katun">Katun</option>
+                                            <option value="Slik">Slik</option>
+                                            <option value="Linen">Linen</option>
+                                            <option value="Toyobo">Toyobo</option>
+                                            <option value="Inma">Inma</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <select class="form-control form-control-user btn-outline-success" name="ukuran">
+                                            <option value="" disable>Pilih Ukuran....</option>
+                                            <option value="XXL">XXL</option>
+                                            <option value="XL">XL</option>
+                                            <option value="L">L</option>
+                                            <option value="M">M</option>
+                                            <option value="S">S</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <input type="number" class="form-control form-control-user btn-outline-success" value="" name="jumlah" placeholder="Jumlah....">
+                                    </div>
+                                    <div class="form-group mb-5">
+                                        <select class="form-control form-control-user btn-outline-success" name="warna">
+                                            <option value="" disable>Pilih Warna....</option>
+                                            <option value="Merah">Merah</option>
+                                            <option value="Kuning">Kuning</option>
+                                            <option value="Hijau">Hijau</option>
+                                            <option value="Biru">Biru</option>
+                                            <option value="Hitam">Hitam</option>
+                                            <option value="Putih">Putih</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-success" style="width: 100%;" onclick="return confirm('Are you sure to order our product ?');">Order Now</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    <?php endforeach; ?>
 
-    <div class="modal fade" id="popupmodal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content kotak">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Order Now !</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col my-auto">
-                            <img class="img-fluid" src="assets/img/ss2.png" alt="">
-                            <h3 class="text-center">Batik</h3>
-                        </div>
-                        <div class="col">
-                            <form action="<?= base_url('user/tambah'); ?>" method="post">
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['name']; ?>" name="nami">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['email']; ?>" name="email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="Batik" name="jenis">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="bahan">
-                                        <option value="" disable>Pilih Bahan....</option>
-                                        <option value="Katun">Katun</option>
-                                        <option value="Slik">Slik</option>
-                                        <option value="Linen">Linen</option>
-                                        <option value="Toyobo">Toyobo</option>
-                                        <option value="Inma">Inma</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="ukuran">
-                                        <option value="" disable>Pilih Ukuran....</option>
-                                        <option value="XXL">XXL</option>
-                                        <option value="XL">XL</option>
-                                        <option value="L">L</option>
-                                        <option value="M">M</option>
-                                        <option value="S">S</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="number" class="form-control form-control-user btn-outline-success" value="" name="jumlah" placeholder="Jumlah....">
-                                </div>
-                                <div class="form-group mb-5">
-                                    <select class="form-control form-control-user btn-outline-success" name="warna">
-                                        <option value="" disable>Pilih Warna....</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Kuning">Kuning</option>
-                                        <option value="Hijau">Hijau</option>
-                                        <option value="Biru">Biru</option>
-                                        <option value="Hitam">Hitam</option>
-                                        <option value="Putih">Putih</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success" style="width: 100%;" onclick="return confirm('Are you sure to order our product ?');">Order Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="modal fade" id="popupmodal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content kotak">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Order Now !</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col my-auto">
-                            <img class="img-fluid" src="assets/img/ss3.png" alt="">
-                            <h3 class="text-center">Jas</h3>
-                        </div>
-                        <div class="col">
-                            <form action="<?= base_url('user/tambah'); ?>" method="post">
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['name']; ?>" name="nami">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['email']; ?>" name="email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="Jas" name="jenis">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="bahan">
-                                        <option value="" disable>Pilih Bahan....</option>
-                                        <option value="Katun">Katun</option>
-                                        <option value="Slik">Slik</option>
-                                        <option value="Linen">Linen</option>
-                                        <option value="Toyobo">Toyobo</option>
-                                        <option value="Inma">Inma</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="ukuran">
-                                        <option value="" disable>Pilih Ukuran....</option>
-                                        <option value="XXL">XXL</option>
-                                        <option value="XL">XL</option>
-                                        <option value="L">L</option>
-                                        <option value="M">M</option>
-                                        <option value="S">S</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="number" class="form-control form-control-user btn-outline-success" value="" name="jumlah" placeholder="Jumlah....">
-                                </div>
-                                <div class="form-group mb-5">
-                                    <select class="form-control form-control-user btn-outline-success" name="warna">
-                                        <option value="" disable>Pilih Warna....</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Kuning">Kuning</option>
-                                        <option value="Hijau">Hijau</option>
-                                        <option value="Biru">Biru</option>
-                                        <option value="Hitam">Hitam</option>
-                                        <option value="Putih">Putih</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success" style="width: 100%;" onclick="return confirm('Are you sure to order our product ?');">Order Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="popupmodal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content kotak">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Order Now !</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col my-auto">
-                            <img class="img-fluid" src="assets/img/ss4.png" alt="">
-                            <h3 class="text-center">Jaket</h3>
-                        </div>
-                        <div class="col">
-                            <form action="<?= base_url('user/tambah'); ?>" method="post">
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['name']; ?>" name="nami">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['email']; ?>" name="email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="Jaket" name="jenis">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="bahan">
-                                        <option value="" disable>Pilih Bahan....</option>
-                                        <option value="Katun">Katun</option>
-                                        <option value="Slik">Slik</option>
-                                        <option value="Linen">Linen</option>
-                                        <option value="Toyobo">Toyobo</option>
-                                        <option value="Inma">Inma</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="ukuran">
-                                        <option value="" disable>Pilih Ukuran....</option>
-                                        <option value="XXL">XXL</option>
-                                        <option value="XL">XL</option>
-                                        <option value="L">L</option>
-                                        <option value="M">M</option>
-                                        <option value="S">S</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="number" class="form-control form-control-user btn-outline-success" value="" name="jumlah" placeholder="Jumlah....">
-                                </div>
-                                <div class="form-group mb-5">
-                                    <select class="form-control form-control-user btn-outline-success" name="warna">
-                                        <option value="" disable>Pilih Warna....</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Kuning">Kuning</option>
-                                        <option value="Hijau">Hijau</option>
-                                        <option value="Biru">Biru</option>
-                                        <option value="Hitam">Hitam</option>
-                                        <option value="Putih">Putih</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success" style="width: 100%;" onclick="return confirm('Are you sure to order our product ?');">Order Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="popupmodal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content kotak">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Order Now !</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col my-auto">
-                            <img class="img-fluid" src="assets/img/ss5.png" alt="">
-                            <h3 class="text-center">Sweeter</h3>
-                        </div>
-                        <div class="col">
-                            <form action="<?= base_url('user/tambah'); ?>" method="post">
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['name']; ?>" name="nami">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['email']; ?>" name="email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="Sweeter" name="jenis">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="bahan">
-                                        <option value="" disable>Pilih Bahan....</option>
-                                        <option value="Katun">Katun</option>
-                                        <option value="Slik">Slik</option>
-                                        <option value="Linen">Linen</option>
-                                        <option value="Toyobo">Toyobo</option>
-                                        <option value="Inma">Inma</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="ukuran">
-                                        <option value="" disable>Pilih Ukuran....</option>
-                                        <option value="XXL">XXL</option>
-                                        <option value="XL">XL</option>
-                                        <option value="L">L</option>
-                                        <option value="M">M</option>
-                                        <option value="S">S</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="number" class="form-control form-control-user btn-outline-success" value="" name="jumlah" placeholder="Jumlah....">
-                                </div>
-                                <div class="form-group mb-5">
-                                    <select class="form-control form-control-user btn-outline-success" name="warna">
-                                        <option value="" disable>Pilih Warna....</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Kuning">Kuning</option>
-                                        <option value="Hijau">Hijau</option>
-                                        <option value="Biru">Biru</option>
-                                        <option value="Hitam">Hitam</option>
-                                        <option value="Putih">Putih</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success" style="width: 100%;" onclick="return confirm('Are you sure to order our product ?');">Order Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="popupmodal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content kotak">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Order Now !</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col my-auto">
-                            <img class="img-fluid" src="assets/img/ss6.png" alt="">
-                            <h3 class="text-center">Hoodie</h3>
-                        </div>
-                        <div class="col">
-                            <form action="<?= base_url('user/tambah'); ?>" method="post">
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['name']; ?>" name="nami">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['email']; ?>" name="email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="Hoodie" name="jenis">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="bahan">
-                                        <option value="" disable>Pilih Bahan....</option>
-                                        <option value="Katun">Katun</option>
-                                        <option value="Slik">Slik</option>
-                                        <option value="Linen">Linen</option>
-                                        <option value="Toyobo">Toyobo</option>
-                                        <option value="Inma">Inma</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="ukuran">
-                                        <option value="" disable>Pilih Ukuran....</option>
-                                        <option value="XXL">XXL</option>
-                                        <option value="XL">XL</option>
-                                        <option value="L">L</option>
-                                        <option value="M">M</option>
-                                        <option value="S">S</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="number" class="form-control form-control-user btn-outline-success" value="" name="jumlah" placeholder="Jumlah....">
-                                </div>
-                                <div class="form-group mb-5">
-                                    <select class="form-control form-control-user btn-outline-success" name="warna">
-                                        <option value="" disable>Pilih Warna....</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Kuning">Kuning</option>
-                                        <option value="Hijau">Hijau</option>
-                                        <option value="Biru">Biru</option>
-                                        <option value="Hitam">Hitam</option>
-                                        <option value="Putih">Putih</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success" style="width: 100%;" onclick="return confirm('Are you sure to order our product ?');">Order Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="popupmodal7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content kotak">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Order Now !</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col my-auto">
-                            <img class="img-fluid" src="assets/img/ss7.png" alt="">
-                            <h3 class="text-center">Seragam</h3>
-                        </div>
-                        <div class="col">
-                            <form action="<?= base_url('user/tambah'); ?>" method="post">
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['name']; ?>" name="nami">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['email']; ?>" name="email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="Seragam" name="jenis">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="bahan">
-                                        <option value="" disable>Pilih Bahan....</option>
-                                        <option value="Katun">Katun</option>
-                                        <option value="Slik">Slik</option>
-                                        <option value="Linen">Linen</option>
-                                        <option value="Toyobo">Toyobo</option>
-                                        <option value="Inma">Inma</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="ukuran">
-                                        <option value="" disable>Pilih Ukuran....</option>
-                                        <option value="XXL">XXL</option>
-                                        <option value="XL">XL</option>
-                                        <option value="L">L</option>
-                                        <option value="M">M</option>
-                                        <option value="S">S</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="number" class="form-control form-control-user btn-outline-success" value="" name="jumlah" placeholder="Jumlah....">
-                                </div>
-                                <div class="form-group mb-5">
-                                    <select class="form-control form-control-user btn-outline-success" name="warna">
-                                        <option value="" disable>Pilih Warna....</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Kuning">Kuning</option>
-                                        <option value="Hijau">Hijau</option>
-                                        <option value="Biru">Biru</option>
-                                        <option value="Hitam">Hitam</option>
-                                        <option value="Putih">Putih</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success" style="width: 100%;" onclick="return confirm('Are you sure to order our product ?');">Order Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="popupmodal8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content kotak">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Order Now !</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col my-auto">
-                            <img class="img-fluid" src="assets/img/ss8.png" alt="">
-                            <h3 class="text-center">Couple</h3>
-                        </div>
-                        <div class="col">
-                            <form action="<?= base_url('user/tambah'); ?>" method="post">
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['name']; ?>" name="nami">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['email']; ?>" name="email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="Couple" name="jenis">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="bahan">
-                                        <option value="" disable>Pilih Bahan....</option>
-                                        <option value="Katun">Katun</option>
-                                        <option value="Slik">Slik</option>
-                                        <option value="Linen">Linen</option>
-                                        <option value="Toyobo">Toyobo</option>
-                                        <option value="Inma">Inma</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="ukuran">
-                                        <option value="" disable>Pilih Ukuran....</option>
-                                        <option value="XXL">XXL</option>
-                                        <option value="XL">XL</option>
-                                        <option value="L">L</option>
-                                        <option value="M">M</option>
-                                        <option value="S">S</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="number" class="form-control form-control-user btn-outline-success" value="" name="jumlah" placeholder="Jumlah....">
-                                </div>
-                                <div class="form-group mb-5">
-                                    <select class="form-control form-control-user btn-outline-success" name="warna">
-                                        <option value="" disable>Pilih Warna....</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Kuning">Kuning</option>
-                                        <option value="Hijau">Hijau</option>
-                                        <option value="Biru">Biru</option>
-                                        <option value="Hitam">Hitam</option>
-                                        <option value="Putih">Putih</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success" style="width: 100%;" onclick="return confirm('Are you sure to order our product ?');">Order Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="popupmodal9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content kotak">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Order Now !</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col my-auto">
-                            <img class="img-fluid" src="assets/img/ss9.png" alt="">
-                            <h3 class="text-center">Kebaya</h3>
-                        </div>
-                        <div class="col">
-                            <form action="<?= base_url('user/tambah'); ?>" method="post">
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['name']; ?>" name="nami">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['email']; ?>" name="email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="Kebaya" name="jenis">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="bahan">
-                                        <option value="" disable>Pilih Bahan....</option>
-                                        <option value="Katun">Katun</option>
-                                        <option value="Slik">Slik</option>
-                                        <option value="Linen">Linen</option>
-                                        <option value="Toyobo">Toyobo</option>
-                                        <option value="Inma">Inma</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="ukuran">
-                                        <option value="" disable>Pilih Ukuran....</option>
-                                        <option value="XXL">XXL</option>
-                                        <option value="XL">XL</option>
-                                        <option value="L">L</option>
-                                        <option value="M">M</option>
-                                        <option value="S">S</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="number" class="form-control form-control-user btn-outline-success" value="" name="jumlah" placeholder="Jumlah....">
-                                </div>
-                                <div class="form-group mb-5">
-                                    <select class="form-control form-control-user btn-outline-success" name="warna">
-                                        <option value="" disable>Pilih Warna....</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Kuning">Kuning</option>
-                                        <option value="Hijau">Hijau</option>
-                                        <option value="Biru">Biru</option>
-                                        <option value="Hitam">Hitam</option>
-                                        <option value="Putih">Putih</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success" style="width: 100%;" onclick="return confirm('Are you sure to order our product ?');">Order Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="popupmodal10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content kotak">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Order Now !</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col my-auto">
-                            <img class="img-fluid" src="assets/img/ss10.png" alt="">
-                            <h3 class="text-center">T-shirt</h3>
-                        </div>
-                        <div class="col">
-                            <form action="<?= base_url('user/tambah'); ?>" method="post">
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['name']; ?>" name="nami">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="<?= $user['email']; ?>" name="email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" class="form-control form-control-user btn-outline-success" value="T-shirt" name="jenis">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="bahan">
-                                        <option value="" disable>Pilih Bahan....</option>
-                                        <option value="Katun">Katun</option>
-                                        <option value="Slik">Slik</option>
-                                        <option value="Linen">Linen</option>
-                                        <option value="Toyobo">Toyobo</option>
-                                        <option value="Inma">Inma</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select class="form-control form-control-user btn-outline-success" name="ukuran">
-                                        <option value="" disable>Pilih Ukuran....</option>
-                                        <option value="XXL">XXL</option>
-                                        <option value="XL">XL</option>
-                                        <option value="L">L</option>
-                                        <option value="M">M</option>
-                                        <option value="S">S</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="number" class="form-control form-control-user btn-outline-success" value="" name="jumlah" placeholder="Jumlah....">
-                                </div>
-                                <div class="form-group mb-5">
-                                    <select class="form-control form-control-user btn-outline-success" name="warna">
-                                        <option value="" disable>Pilih Warna....</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Kuning">Kuning</option>
-                                        <option value="Hijau">Hijau</option>
-                                        <option value="Biru">Biru</option>
-                                        <option value="Hitam">Hitam</option>
-                                        <option value="Putih">Putih</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success" style="width: 100%;" onclick="return confirm('Are you sure to order our product ?');">Order Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 

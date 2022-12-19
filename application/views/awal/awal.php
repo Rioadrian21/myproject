@@ -51,9 +51,10 @@
         <div class="container">
             <div class="tengah">
                 <h1 class="text-light text-center">WEB SISTEM INFORMASI JASA JAHIT</h1>
-                <p class="text-light text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi vitae minima fugit sint omnis voluptate alias architecto odio dolorum illo provident natus impedit ipsam distinctio maiores ipsum, adipisci sequi voluptatum!
-                    Provident aliquam cumque fuga reiciendis labore dignissimos? Placeat voluptatibus vero quaerat ullam consectetur quibusdam nemo exercitationem iure tenetur sapiente, architecto quisquam magni ut illo incidunt voluptatum? Totam fugiat at corrupti.
-                    Eaque assumenda nobis nostrum temporibus quos molestias tenetur autem perspiciatis eligendi reiciendis labore, aperiam, vero doloremque excepturi exercitationem aliquam qui, dolor et quis. Laborum, quibusdam natus id voluptates officiis cum?</p>
+                <p class="text-light text-center">Sistem Informasi jasa jahit atau di kenal dengan sijaja, berdiri pada tanggal 12 desember 2022, Yang berdomisili,
+                    pembuatan awal di kab.kawarang, di buat oleh tangan mahasiswa ubsi cikampek, untuk penempatan kami berada di daerah galuh mas,
+                    dengan adanya sistem jahit berbasis web ini tidak hanya mempermudah kaum mageran tapi juga untuk pengembangan di era digital seperti ini yang hampir 100% semua nya memakai via online
+                    Tempat kami sangat cocok untuk anda yang ingin membuat baju, seragam sekolah, kemeja dll, silahkan coba dan daftar kan diri anda.</p>
                 <a class="btn btn-outline-primary" href="<?= base_url('auth'); ?>">Sign in</a>
             </div>
         </div>
