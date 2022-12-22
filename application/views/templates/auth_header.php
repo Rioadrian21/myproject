@@ -20,4 +20,4 @@
 
 </head>
 
-<body class="bg-dark">
+<body style="background-image: linear-gradient(red, yellow, green);">
