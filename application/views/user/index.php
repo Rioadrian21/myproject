@@ -57,7 +57,7 @@
                 <p>Anda ingin membuat baju, Seragam Sekolah, kemeja dll tapi gatau caranya menjahit?
                     Tenang saja ya, anda bisa mempercayakan semuanya kepada Si Jaja kami
                     Hanya dalam waktu kurang dari 7 hari, sudah bisa si ambil loh!
-                    Anda juga bisa memilih sendiri bahan yang akan digunakan atau bisa juga dengan mempercayakan jasa kami!</p>
+                    Anda juga bisa memilih sendiri bahan yang akan digunakan atau bisa juga dengan mempercayakan jasa kami!</p>
                 <a href="#product">Order Now !</a>
             </div>
             <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">

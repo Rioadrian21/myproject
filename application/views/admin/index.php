@@ -74,6 +74,7 @@
                                     <td>Rp. <?= $od['jumlah_harga'] ?></td>
                                     <td><?= $od['warna'] ?></td>
                                     <td>
+                                        <a class="btn btn-outline-success py-0" href="<?= base_url() ?>Admin/edit/<?= $od['id']; ?>"> Edit </a>
                                         <a class="btn btn-outline-success py-0" href="<?= base_url() ?>Admin/hapus/<?= $od['id']; ?>" onclick="return confirm('Apakah anda yakin sudah selesai?');"> Selesai </a>
                                     </td>
                                 </tr>

@@ -141,3 +141,8 @@ html {
     padding: 2rem 1.5rem;
     border-radius: 7px;
 }
+
+.container .row .rip {
+    border-radius: 0% 75% 7% 0%;
+    border: #00BF7F 5px solid;
+}
